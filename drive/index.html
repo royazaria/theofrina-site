@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>החומרים שלך — המוח</title>
+<link rel="icon" type="image/png" href="../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@500;700;900&family=Gveret+Levin&display=swap">
+<style>
+/* same world as the sales page: cream paper, wine, gold sun, one reading column */
+:root{
+  --paper:#f5f1eb; --paper-2:#ece4da; --card:#fffdf9; --ink:#2c2928; --ink-soft:#6c625d; --line:#ded3c6;
+  --wine:#5a0e14; --wine-2:#7a1a20; --gold:#b07a1e; --sun-a:#ffd27a; --sun-b:#f7a23b; --night:#140806; --ok:#2f6b3a;
+  --serif:"Frank Ruhl Libre","David Libre",Georgia,serif; --sans:"Assistant","Heebo",Arial,sans-serif; --hand:"Gveret Levin","Frank Ruhl Libre",serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.page{direction:rtl}
+.page a:not(.btn){color:var(--wine);font-weight:700}
+.wrap{max-width:680px;margin:0 auto;padding-inline:20px}
+section{padding-block:40px}
+h1,h2,h3{font-family:var(--serif);color:var(--wine);margin:0;line-height:1.2;text-wrap:balance}
+h1{font-size:clamp(36px,8vw,56px);font-weight:900}
+h2{font-size:clamp(26px,6vw,34px);font-weight:700;margin-bottom:12px}
+h3{font-size:21px;font-weight:700;margin-bottom:6px}
+p{margin:0 0 14px}
+.eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--gold);margin-bottom:12px}
+.strip{background:var(--wine);color:#f3e6dc;font-size:14px;text-align:center;padding:9px 16px;letter-spacing:.04em}
+.sun{position:relative;display:inline-block;z-index:0}
+.sun::before{content:"";position:absolute;z-index:-1;width:1.5em;height:1.5em;left:50%;top:52%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,244,214,.95) 0%,var(--sun-a) 34%,rgba(247,162,59,.55) 62%,rgba(247,162,59,0) 74%)}
+.hero{text-align:center;padding-top:40px;padding-bottom:10px}
+.hero p{font-size:19.5px}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:16px;counter-reset:s}
+.steps>li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;padding-right:66px;min-width:0}
+.steps>li::before{counter-increment:s;content:counter(s);position:absolute;right:18px;top:18px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--wine);background:radial-gradient(circle,#fff1cf 0%,var(--sun-a) 45%,var(--sun-b) 100%)}
+.steps p,.steps li li{font-size:16.5px}
+.steps p{color:var(--ink-soft);margin-bottom:10px}
+.steps ol,.steps ul{margin:0 0 12px;padding-right:20px}
+.steps li li{margin-bottom:5px}
+.yes li::marker{content:"✓  ";color:var(--ok)}
+.no li::marker{content:"✕  ";color:var(--wine)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:16px;padding:10px 18px;border-radius:999px;border:1.5px solid var(--wine);color:var(--wine);background:transparent;cursor:pointer;font-family:var(--sans)}
+.btn.fill{background:var(--wine);color:#fff7ef}
+.btn:hover{background:var(--wine-2);color:#fff7ef;border-color:var(--wine-2)}
+.btn:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.tip{background:rgba(255,210,122,.18);border-radius:12px;padding:10px 14px;font-size:16px;margin:0 0 10px;color:var(--ink)}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:4px 0 12px}
+.mail code{direction:ltr;font-family:Consolas,"SF Mono",Menlo,monospace;font-size:15.5px;background:var(--night);color:#ffe1a8;border-radius:10px;padding:8px 12px;max-width:100%;overflow-wrap:anywhere}
+.progress{display:flex;justify-content:center;gap:8px;margin:0 0 18px}
+.progress span{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--ink-soft);background:var(--paper-2);border-radius:999px;padding:4px 12px}
+.progress span.on{background:var(--wine);color:#fff7ef}
+.btn.big{font-size:20px;padding:16px 40px;box-shadow:0 14px 30px -16px rgba(90,14,20,.8)}
+.ui{background:var(--paper-2);border-radius:6px;padding:1px 7px;font-weight:700;color:var(--ink);white-space:nowrap}
+
+/* the three ways to transcribe */
+.ways{display:grid;gap:12px;margin-top:6px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 16px}
+summary{cursor:pointer;list-style:none;font-weight:700;font-size:17.5px;padding:14px 0;display:flex;gap:10px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";margin-inline-start:auto;color:var(--wine);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+summary small{display:block;font-weight:400;font-size:14.5px;color:var(--ink-soft)}
+details .in{padding-bottom:14px}
+.tag{flex:none;font-family:var(--serif);color:var(--wine);font-size:18px}
+
+.done{background:var(--paper-2)}
+.sig{font-family:var(--hand);font-size:38px;color:var(--wine);text-align:center;margin-top:20px}
+footer{background:var(--wine);color:#f1dfd2;text-align:center;font-size:14px;padding:20px 16px}
+/* phones: never wider than the screen (iPhone and in-app browsers widen the page if anything sticks out) */
+html,body{overflow-x:hidden;max-width:100%}
+body{position:relative}
+.page{overflow-x:hidden;overflow-x:clip}
+</style>
+</head>
+<body>
+<div class="page" lang="he">
+<div class="strip">עפרי שמואל נגר · המוח</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="progress" aria-label="שלב 2 מתוך 3"><span class="on">1 · ההתחלה</span><span class="on">2 · החומרים</span><span>3 · סיימתי</span></div>
+    <span class="eyebrow">הכנת החומרים</span>
+    <h1>כל מה שכבר יצרת,<br><span class="sun">במקום</span> אחד.</h1>
+    <p>המוח לומד ממה שכבר קיים אצלך: חוברות, וובינרים, קורסים, פוסטים, הקלטות. ככה הוא כותב כמוך מהיום הראשון. זה לוקח קצת זמן, ושווה כל דקה.</p>
+  </div>
+</header>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <ol class="steps">
+      <li><h3>פותחים תיקייה בגוגל דרייב</h3>
+        <ol>
+          <li>נכנסים ל-Google Drive עם החשבון שלך בגוגל.</li>
+          <li>לוחצים <span class="ui">+ חדש</span> ⇐ <span class="ui">תיקייה חדשה</span>.</li>
+          <li>קוראים לה: <b>המוח שלי — </b>ושם העסק.</li>
+        </ol>
+        <div class="btns"><a class="btn fill" href="https://drive.google.com" target="_blank" rel="noopener">לגוגל דרייב</a></div></li>
+
+      <li><h3>שמים בה את מה שיש לך</h3>
+        <ul class="yes">
+          <li>חוברות, מדריכים וקובצי PDF</li>
+          <li>מצגות של וובינרים, הרצאות וכנסים</li>
+          <li>דפי נחיתה ודפי מכירה (קישור או צילום מסך)</li>
+          <li>הפוסטים והכיתובים שהכי עבדו לך</li>
+          <li>המלצות של לקוחות (צילומי מסך)</li>
+          <li>הודעות, מיילים ותסריטים שאת שולחת שוב ושוב</li>
+          <li>תמלולים של וובינרים, קורסים, הקלטות וסרטונים (בצעד הבא)</li>
+        </ul>
+        <ul class="no">
+          <li>סיסמאות, פרטי אשראי ובנק, תעודות זהות</li>
+          <li>מידע אישי רגיש של לקוחות, כמו מידע רפואי</li>
+        </ul>
+        <p class="tip">💡 לא חייבים הכל. 5 עד 10 הדברים הכי חשובים שלך, הוובינר שמוכר הכי טוב, הקורס, החוברת, שווים יותר מאלף קבצים.</p>
+        <p class="tip">💡 תני לכל קובץ שם שאומר מה הוא. למשל: <b>וובינר — הנושא — 2025</b>.</p></li>
+
+      <li><h3>מתמללים סרטונים והקלטות</h3>
+        <p>המוח קורא מילים, לא רואה ולא שומע. וובינר, קורס, הקלטה או סרטון צריך להפוך קודם לטקסט. ככה עושים את זה, בחינם:</p>
+        <div class="ways">
+          <details open>
+            <summary><span class="tag">א.</span><span>סרטון ביוטיוב<small>וובינרים, לייבים וסרטונים שלך שעלו ליוטיוב</small></span></summary>
+            <div class="in">
+              <ol>
+                <li>פותחים את הסרטון ביוטיוב, במחשב.</li>
+                <li>מתחת לסרטון, בתיאור, לוחצים <span class="ui">...עוד</span>.</li>
+                <li>גוללים לסוף התיאור ולוחצים <span class="ui">הצגת התמליל</span>. התמליל נפתח בצד.</li>
+                <li>בשלוש הנקודות שבראש התמליל מכבים את חותמות הזמן (Toggle timestamps).</li>
+                <li>מסמנים את כל הטקסט: לוחצים לפני המילה הראשונה, גוללים עד הסוף, ולוחצים <b>Shift</b> + קליק אחרי המילה האחרונה. מעתיקים: <b>Ctrl + C</b> (ב-Mac: <b>Cmd + C</b>).</li>
+                <li>בתיקייה בדרייב: <span class="ui">+ חדש</span> ⇐ <span class="ui">Google Docs</span>, מדביקים, וקוראים למסמך בשם של הסרטון.</li>
+              </ol>
+              <p class="tip" style="margin:0">אין כפתור "הצגת התמליל"? לסרטון אין כתוביות. מתמללים אותו בדרך ב'.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="tag">ב.</span><span>הקלטה, וובינר, זום, קורס דיגיטלי, הודעה קולית<small>כל קובץ של קול או וידאו</small></span></summary>
+            <div class="in">
+              <p>משתמשים ב-<b>TurboScribe</b>. הוא מתמלל עברית, ובחינם: 3 קבצים ביום, עד 30 דקות כל אחד.</p>
+              <ol>
+                <li>נכנסים לאתר ונרשמים. אפשר עם החשבון בגוגל, ולא צריך כרטיס אשראי.</li>
+                <li>מעלים את הקובץ: ההקלטה, הסרטון או הוובינר.</li>
+                <li>בשפה (Language) בוחרים <b>Hebrew</b>, ולוחצים <b>Transcribe</b>.</li>
+                <li>כשהתמלול מוכן, פותחים אותו ⇐ <b><bdi>Download</bdi></b> ⇐ <b><bdi>TXT</bdi></b> (או DOCX).</li>
+                <li>מעלים את הקובץ לתיקייה בדרייב.</li>
+              </ol>
+              <div class="btns" style="margin-bottom:12px"><a class="btn fill" href="https://turboscribe.ai" target="_blank" rel="noopener">ל-TurboScribe</a></div>
+              <p class="tip">💡 <b>קובץ ארוך מ-30 דקות?</b> אפשר לתמלל רק את החלק החשוב, בדרך כלל ההסבר והמכירה, או לפתוח אצלם מנוי לחודש אחד ולבטל.</p>
+              <p class="tip">💡 <b>קורס דיגיטלי:</b> הסרטונים המקוריים בדרך כלל אצלך, במחשב, בדרייב או ב-Vimeo. משם מעלים. לא מוצאת אותם? כתבי לי, ונמצא דרך.</p>
+              <p class="tip">💡 <b>הודעה קולית בוואטסאפ:</b> בטלפון, לחיצה ארוכה על ההודעה ⇐ שיתוף ⇐ שמירה בדרייב. ומשם ל-TurboScribe. הוא עובד גם מהדפדפן בטלפון.</p>
+              <p class="tip" style="margin:0">💡 <b>החומר הכי טוב שיש:</b> הקליטי את עצמך 20 דקות מספרת על העסק, על הלקוחות ועל הדרך שלך, כאילו את מדברת עם חברה. ותמללי.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="tag">ג.</span><span>רילים וסטוריז באינסטגרם<small>מה שעלה לרשתות</small></span></summary>
+            <div class="in">
+              <p style="margin-bottom:8px">יש לך את הסרטון המקורי? מתמללים אותו בדרך ב'. את הכיתוב שכתבת מתחת לפוסט מעתיקים ל-Google Docs בתיקייה. ופוסטים שהכי עבדו לך? צילום מסך מספיק.</p>
+            </div>
+          </details>
+        </div></li>
+
+      <li><h3>משתפים את התיקייה איתי</h3>
+        <ol>
+          <li>קליק ימני על התיקייה ⇐ <span class="ui">שיתוף</span> ⇐ שוב <span class="ui">שיתוף</span>.</li>
+          <li>כותבים את המייל שלי ולוחצים <span class="ui">שליחה</span>:</li>
+        </ol>
+        <div class="mail"><code id="mail">theofrina@gmail.com</code><button type="button" class="btn" data-copy="mail">העתקה</button></div>
+        <p class="tip" style="margin:0">💡 התמלולים לוקחים זמן? אין בעיה. שלחי את הקישור כבר עכשיו, ותוסיפי לאותה תיקייה בהמשך. כל מה שנכנס לפני שאנחנו בונים את המוח, נכנס למוח. מה שיגיע אחר כך, תכניסי לבד עם "קלוט את זה".</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="done">
+  <div class="wrap" style="text-align:center">
+    <h2>זהו. התיקייה מוכנה.</h2>
+    <p>שיתפת אותה איתי? אז סיימת את החלק שלך.</p>
+    <div class="btns" style="justify-content:center"><a class="btn fill big" href="../done/">סיימתי</a></div>
+    <p style="margin-top:22px">יש שאלה? נתקעת באיזה צעד?</p>
+    <div class="btns" style="justify-content:center"><a class="btn" href="https://wa.me/972522596693" target="_blank" rel="noopener">כתבי לי בוואטסאפ</a></div>
+    <div class="sig">באהבה, עפרי</div>
+  </div>
+</section>
+
+<footer>עפרי שמואל נגר · ‎@theofrina · חזרה למקור | פתיחת כוחות הנשמה</footer>
+</div>
+<script>
+document.querySelectorAll("[data-copy]").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var t = document.getElementById(b.getAttribute("data-copy")).textContent.trim();
+    var done = function () { var o = b.textContent; b.textContent = "הועתק ✓"; setTimeout(function () { b.textContent = o; }, 1800); };
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(t).then(done, done); return; }
+    var ta = document.createElement("textarea"); ta.value = t; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); } catch (e) {} ta.remove(); done();
+  });
+});
+</script>
+</body>
+</html>

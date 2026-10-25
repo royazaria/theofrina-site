@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>קיבלתי את כל הפרטים — המוח</title>
+<link rel="icon" type="image/png" href="../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@500;700;900&family=Gveret+Levin&display=swap">
+<style>
+/* same world as the sales page: cream paper, wine, gold sun, one reading column */
+:root{
+  --paper:#f5f1eb; --paper-2:#ece4da; --card:#fffdf9; --ink:#2c2928; --ink-soft:#6c625d; --line:#ded3c6;
+  --wine:#5a0e14; --wine-2:#7a1a20; --gold:#b07a1e; --sun-a:#ffd27a; --sun-b:#f7a23b; --night:#140806; --ok:#2f6b3a;
+  --serif:"Frank Ruhl Libre","David Libre",Georgia,serif; --sans:"Assistant","Heebo",Arial,sans-serif; --hand:"Gveret Levin","Frank Ruhl Libre",serif;
+  --mono:Consolas,"SF Mono",Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.page{direction:rtl}
+.page a:not(.btn){color:var(--wine);font-weight:700}
+.wrap{max-width:680px;margin:0 auto;padding-inline:20px}
+section{padding-block:44px}
+h1,h2,h3{font-family:var(--serif);color:var(--wine);margin:0;line-height:1.2;text-wrap:balance}
+h1{font-size:clamp(40px,9vw,64px);font-weight:900}
+h2{font-size:clamp(28px,6vw,38px);font-weight:700;margin-bottom:14px}
+h3{font-size:21px;font-weight:700;margin-bottom:4px}
+p{margin:0 0 14px}
+.eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--gold);margin-bottom:12px}
+.hand{font-family:var(--hand);color:var(--wine);line-height:1.15}
+.strip{background:var(--wine);color:#f3e6dc;font-size:14px;text-align:center;padding:9px 16px;letter-spacing:.04em}
+.sun{position:relative;display:inline-block;z-index:0}
+.sun::before{content:"";position:absolute;z-index:-1;width:1.5em;height:1.5em;left:50%;top:52%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,244,214,.95) 0%,var(--sun-a) 34%,rgba(247,162,59,.55) 62%,rgba(247,162,59,0) 74%)}
+
+.hero{text-align:center;padding-top:44px}
+.orb{width:150px;height:150px;max-width:50%;aspect-ratio:1;margin:0 auto 20px;border-radius:50%;background:url("../img/orb-brain.webp") center/cover;box-shadow:0 0 0 6px var(--paper-2),0 20px 40px -18px rgba(90,14,20,.7)}
+.hero .hand{font-size:40px;margin-bottom:6px}
+.hero p{font-size:20px}
+.paid{display:inline-block;background:#e7f1e8;color:var(--ok);border-radius:999px;padding:6px 16px;font-weight:700;font-size:15px;margin-bottom:18px}
+
+.phase{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:15px;letter-spacing:.12em;margin:30px 0 10px}
+.why + .phase{margin-top:0}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps>li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;padding-right:66px;min-width:0;scroll-margin-top:16px}
+.steps>li::before{counter-increment:s;content:counter(s);position:absolute;right:18px;top:18px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--wine);background:radial-gradient(circle,#fff1cf 0%,var(--sun-a) 45%,var(--sun-b) 100%)}
+.steps.cont{counter-reset:none}
+.steps p,.steps li li{font-size:16.5px}
+.steps p{margin:0 0 10px;color:var(--ink-soft)}
+.steps p:last-child{margin-bottom:0}
+.steps ol{margin:0 0 10px;padding-right:20px}
+.steps li li{margin-bottom:4px}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:16px;padding:10px 18px;border-radius:999px;border:1.5px solid var(--wine);color:var(--wine);background:transparent;cursor:pointer;font-family:var(--sans)}
+.btn.fill{background:var(--wine);color:#fff7ef}
+.btn:hover{background:var(--wine-2);color:#fff7ef;border-color:var(--wine-2)}
+.btn[aria-disabled="true"]{opacity:.55;pointer-events:none}
+.btn:focus-visible,.tab:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.ui{background:var(--paper-2);border-radius:6px;padding:1px 7px;font-weight:700;color:var(--ink);white-space:nowrap}
+.tip{background:rgba(255,210,122,.18);border-radius:12px;padding:10px 14px;font-size:16px;color:var(--ink)!important}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:4px 0 10px}
+.mail code{direction:ltr;font-family:var(--mono);font-size:15px;background:var(--night);color:#ffe1a8;border-radius:10px;padding:7px 12px;max-width:100%;overflow-wrap:anywhere}
+
+/* the command box */
+.cmdbox{margin-top:12px;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;max-width:100%;min-width:0}
+.tabs{display:flex;border-bottom:1px solid var(--line)}
+.tab{flex:1;font:inherit;font-weight:700;font-size:16px;padding:10px 12px;background:var(--paper-2);border:0;color:var(--ink-soft);cursor:pointer}
+.tab[aria-selected="true"]{background:#fff;color:var(--wine)}
+.pane{padding:14px}
+.pane ol{margin:0 0 10px;padding-right:20px;font-size:16px;color:var(--ink)}
+.pane li{margin-bottom:4px}
+.code{max-width:100%;direction:ltr;text-align:left;font-family:var(--mono);font-size:13.5px;background:var(--night);color:#ffe1a8;border-radius:10px;padding:12px 14px;overflow-x:auto;white-space:nowrap;margin-bottom:10px}
+.small{font-size:14.5px;color:var(--ink-soft)}
+
+/* the prompt she pastes to Claude */
+.prompt{white-space:pre-wrap;font-size:15.5px;line-height:1.65;color:var(--ink);background:#fff;border:2px dashed var(--gold);border-radius:14px;padding:14px 16px;margin:6px 0 10px;max-width:100%;overflow-wrap:anywhere}
+.why{background:var(--card);border:2px solid var(--wine);border-radius:16px;padding:16px 18px;margin-bottom:26px;font-size:17px}
+.why b{color:var(--wine)}
+.bonus{background:var(--night);color:#f3e6dc;border-radius:18px;padding:22px 20px;margin-top:26px}
+.bonus h3{color:var(--sun-a)}
+.bonus p{color:#e6d3c4;font-size:16.5px}
+.bonus .btn{border-color:var(--sun-a);color:var(--night);background:var(--sun-a)}
+
+.next{background:var(--paper-2)}
+.timeline{display:grid;gap:10px}
+.timeline div{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+.timeline i{width:12px;height:12px;border-radius:50%;background:var(--wine);margin-top:9px;justify-self:center}
+.guarantee{border:2px solid var(--wine);border-radius:18px;padding:18px 20px;background:var(--card)}
+.sig{font-family:var(--hand);font-size:38px;color:var(--wine);text-align:center;margin-top:20px}
+footer{background:var(--wine);color:#f1dfd2;text-align:center;font-size:14px;padding:20px 16px}
+
+/* the onboarding path: step 1 of 3, the big "next" button */
+.progress{display:flex;justify-content:center;gap:8px;margin:0 0 14px}
+.progress span{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--ink-soft);background:var(--paper-2);border-radius:999px;padding:4px 12px}
+.progress span.on{background:var(--wine);color:#fff7ef}
+.notice{background:#fff7e3;border:2px solid var(--gold);border-radius:16px;padding:14px 18px;margin-bottom:14px;font-size:17px}
+.notice b{color:var(--wine)}
+.next-step{margin-top:30px;text-align:center}
+.next-step .btn.big{font-size:20px;padding:16px 40px;box-shadow:0 14px 30px -16px rgba(90,14,20,.8)}
+.next-step p{font-size:15.5px;color:var(--ink-soft);margin-top:10px}
+.already{margin-top:34px;text-align:center;font-size:15.5px;color:var(--ink-soft)}
+.page a:not(.btn){color:var(--wine);font-weight:700}
+.done-logo{display:block;width:min(300px,72%);height:auto;margin:0 auto 6px;filter:drop-shadow(0 10px 28px rgba(247,162,59,.35))}
+.got{font-family:var(--serif);font-size:clamp(22px,5.4vw,28px);color:var(--ink);margin:0 0 4px}
+/* phones: never wider than the screen (iPhone and in-app browsers widen the page if anything sticks out) */
+html,body{overflow-x:hidden;max-width:100%}
+body{position:relative}
+.page{overflow-x:hidden;overflow-x:clip}
+</style>
+</head>
+<body>
+<div class="page" lang="he">
+<div class="strip">עפרי שמואל נגר · המוח</div>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="done-logo" src="../img/logo-hamoach.webp" width="760" height="856" alt="המוח">
+    <div class="hand">תודה יפה שלי,</div>
+    <p class="got">קיבלתי את כל הפרטים.</p>
+    <h1>המוח שלך <span class="sun">בהכנה</span>.</h1>
+    <p>עכשיו התור שלנו. אנחנו בונים לך את המוח מהשאלון ומהחומרים שלך,<br>ואת יכולה לנשום.</p>
+  </div>
+</header>
+
+<section style="padding-top:16px">
+  <div class="wrap">
+    <div class="progress" aria-label="סיימת"><span class="on">1 · ההתחלה</span><span class="on">2 · החומרים</span><span class="on">3 · סיימתי</span></div>
+    <span class="eyebrow">מה קורה מכאן</span>
+    <ol class="steps">
+      <li><h3>אנחנו בונים לך את המוח</h3><p>מהשאלון ומכל מה ששמת בתיקייה. זה לוקח כמה ימים.</p></li>
+      <li><h3>המוח מגיע אלייך בוואטסאפ</h3><p>קובץ בשם "המוח שלי", יחד עם קישור להוראות התקנה פשוטות: שורה אחת, וכמה דקות.</p></li>
+      <li><h3>ה-Claude שלך שואל אותך מה חסר</h3><p>את עונה כמה שבא לך, ושולחת לי את התשובות.</p></li>
+      <li><h3>מקבלת מוח מלא</h3><p>עם חוברת הסבר ו-100 פרומפטים. הכל תוך שבוע מהתשלום.</p></li>
+      <li><h3>ונכנסת לקבוצה האקסקלוסיבית</h3><p>אני מצרפת אותך לקבוצה שלי באינסטגרם, לפי שם המשתמש שכתבת בשאלון. החברות לתמיד.</p></li>
+    </ol>
+
+    <div class="why" style="margin-top:26px"><b>ועד אז?</b> נזכרת בעוד משהו? חוברת, הקלטה, המלצה? פשוט תוסיפי לאותה תיקייה בדרייב. כל פרט שתוסיפי יעזור למוח לדייק את עצמו אלייך.</div>
+
+    <div class="guarantee"><h3>ורק שתזכרי: יש לך 5 ימי ניסיון</h3><p style="margin:0">מהיום שקיבלת את המוח. לא אהבת? תשלחי לי <a href="https://wa.me/972522596693" target="_blank" rel="noopener">בוואטסאפ</a> "אני רוצה את הכסף שלי בחזרה" עם צילום מסך של הרכישה, וכל הכסף חוזר. בלי שאלות. והמוח נשאר אצלך.</p></div>
+    <p style="text-align:center;margin-top:22px">משהו לא ברור? רוצה להוסיף משהו?</p>
+    <div class="btns" style="justify-content:center"><a class="btn fill" href="https://wa.me/972522596693" target="_blank" rel="noopener">כתבי לי בוואטסאפ</a></div>
+    <p class="already">שכחת משהו? <a href="../thanks/">חזרה לשאלון</a> · <a href="../drive/">חזרה למדריך הדרייב</a></p>
+    <div class="sig">באהבה, עפרי</div>
+  </div>
+</section>
+
+<footer>עפרי שמואל נגר · ‎@theofrina · חזרה למקור | פתיחת כוחות הנשמה</footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>הכל מותקן — המוח</title>
+<link rel="icon" type="image/png" href="../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@500;700;900&family=Gveret+Levin&display=swap">
+<style>
+/* the page the installer opens: one column, the last step big and unmissable */
+:root{
+  --paper:#f5f1eb; --paper-2:#ece4da; --card:#fffdf9; --ink:#2c2928; --ink-soft:#6c625d; --line:#ded3c6;
+  --wine:#5a0e14; --wine-2:#7a1a20; --gold:#b07a1e; --sun-a:#ffd27a; --sun-b:#f7a23b; --night:#140806; --ok:#2f6b3a;
+  --serif:"Frank Ruhl Libre","David Libre",Georgia,serif; --sans:"Assistant","Heebo",Arial,sans-serif; --hand:"Gveret Levin","Frank Ruhl Libre",serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.page{direction:rtl}
+.page a:not(.btn){color:var(--wine);font-weight:700}
+.wrap{max-width:660px;margin:0 auto;padding-inline:20px}
+section{padding-block:40px}
+h1,h2,h3{font-family:var(--serif);color:var(--wine);margin:0;line-height:1.2;text-wrap:balance}
+h1{font-size:clamp(38px,9vw,58px);font-weight:900}
+h2{font-size:clamp(26px,6vw,34px);font-weight:700;margin-bottom:14px}
+h3{font-size:20px;font-weight:700;margin-bottom:4px}
+p{margin:0 0 12px}
+.strip{background:var(--wine);color:#f3e6dc;font-size:14px;text-align:center;padding:9px 16px;letter-spacing:.04em}
+.hero{text-align:center;padding-top:40px}
+.orb{width:130px;height:130px;max-width:45%;aspect-ratio:1;margin:0 auto 18px;border-radius:50%;background:url("../img/orb-brain.webp") center/cover;box-shadow:0 0 0 6px var(--paper-2),0 20px 40px -18px rgba(90,14,20,.7)}
+.ok{display:inline-block;background:#e7f1e8;color:var(--ok);border-radius:999px;padding:6px 16px;font-weight:700;font-size:15px;margin-bottom:14px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps>li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;padding-right:66px;min-width:0}
+.steps>li::before{counter-increment:s;content:counter(s);position:absolute;right:18px;top:18px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--wine);background:radial-gradient(circle,#fff1cf 0%,var(--sun-a) 45%,var(--sun-b) 100%)}
+.steps p{color:var(--ink-soft);font-size:16.5px}
+.steps p:last-child{margin-bottom:0}
+.prompt{white-space:pre-wrap;font-size:15.5px;line-height:1.65;color:var(--ink);background:#fff;border:2px dashed var(--gold);border-radius:14px;padding:14px 16px;margin:6px 0 10px;max-width:100%;overflow-wrap:anywhere}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:16px;padding:10px 18px;border-radius:999px;border:1.5px solid var(--wine);background:var(--wine);color:#fff7ef;cursor:pointer;font-family:var(--sans)}
+.btn:hover{background:var(--wine-2)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.path{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:16px;margin:4px 0 10px}
+.path span{background:var(--paper-2);border-radius:8px;padding:3px 10px;font-weight:700;color:var(--ink)}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700;font-size:17.5px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:24px;line-height:1;font-weight:400}
+details[open] summary::after{content:"–"}
+details p{margin:8px 0 0;color:var(--ink-soft);font-size:16.5px}
+summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.sig{font-family:var(--hand);font-size:36px;color:var(--wine);text-align:center;margin-top:18px}
+footer{background:var(--wine);color:#f1dfd2;text-align:center;font-size:14px;padding:20px 16px}
+/* phones: never wider than the screen (iPhone and in-app browsers widen the page if anything sticks out) */
+html,body{overflow-x:hidden;max-width:100%}
+body{position:relative}
+.page{overflow-x:hidden;overflow-x:clip}
+</style>
+</head>
+<body>
+<div class="page" lang="he">
+<div class="strip">עפרי שמואל נגר · המוח</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="orb" role="img" aria-label="המוח"></div>
+    <span class="ok">✓ הכל מותקן</span>
+    <h1>המוח שלך בפנים.</h1>
+  </div>
+</header>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <ol class="steps">
+      <li><h3>פתחי את Claude ובחרי את התיקייה</h3>
+        <div class="path"><span>Claude</span>⇐<span>Code</span>⇐<span>+ New session</span>⇐<span>המוח שלי</span></div>
+        <p>בפעם הראשונה Claude יבקש להתחבר. מתחברים עם החשבון של המנוי. התיקייה "המוח שלי" נמצאת בתיקיית המשתמש שלך.</p></li>
+      <li><h3>שלחי לו את ההודעה הזאת</h3>
+        <div class="prompt" id="prompt">השלמת המוח.
+המשימה: לגלות מה עוד חסר במוח שלי, ולשאול אותי.
+
+1. קודם לקרוא, בלי לשאול: את CLAUDE.md, את "00 - מפת המוח", את "00 - אינדקס הנושאים", את כל מה שיש ב-11-שאלות-פתוחות, ואת הנוירונים בשאר התיקיות.
+2. אחר כך לשאול אותי 5 שאלות בכל פעם. קודם מה שהכי חשוב כדי לכתוב בקול שלי ולמכור בשבילי, ורק אחר כך הרקע. שאלות על העסק שלי, במילים שלי, ולכל שאלה (למה) קצר.
+3. אחרי כל 5 תשובות, לשמור את השאלות והתשובות שלי, מילה במילה, בקובץ אחד: _גולמי/השלמות — התאריך של היום.md. לא לשנות שום נוירון.
+4. להמשיך כל עוד חסר משהו, עד שאין לך יותר שאלות מאף כיוון, או עד שאכתוב "די".
+5. בסוף: לכתוב לי כמה שאלות עניתי, ואיפה בדיוק הקובץ, כדי שאשלח אותו לעפרי.</div>
+        <button type="button" class="btn" data-copy="prompt">העתקת ההודעה</button>
+        <p style="margin-top:10px">הוא קורא את כל המוח ושואל אותך את מה שעוד חסר לו. עני על כמה שיותר. בסוף הוא שומר הכל בקובץ <b>השלמות</b> בתיקייה <b>_גולמי</b>: פותחים אותו ב-Obsidian, מעתיקים הכל (Ctrl + A, Ctrl + C), ומדביקים לי <a href="https://wa.me/972522596693" target="_blank" rel="noopener">בוואטסאפ</a>.</p></li>
+      <li><h3>פתחי את המפה</h3>
+        <p>ב-Obsidian, ברשימת הקבצים, לוחצים על <b>המפה</b>. זה העסק שלך, מבחוץ.</p></li>
+      <li><h3>חברי את הג׳ימייל והדרייב (פעם אחת)</h3>
+        <p>נכנסים ל-claude.ai ⇐ בתפריט <b><bdi>Customize</bdi></b> (או <b><bdi>Settings</bdi></b>) ⇐ <b><bdi>Connectors</bdi></b> ⇐ ליד <b><bdi>Gmail</bdi></b> לוחצים <b><bdi>Connect</bdi></b> ומאשרים עם החשבון בגוגל. אותו דבר ל-<b><bdi>Google Drive</bdi></b>.</p>
+        <p>מעכשיו אפשר לבקש: "תמצא בדרייב את המצגת של...", "תכתוב טיוטת תשובה למייל של...". מיילים נשארים טיוטה עד שאת מאשרת ושולחת.</p></li>
+      <li><h3>קיבלת ממני את המוח המלא?</h3>
+        <p>שמרי את הקובץ החדש בהורדות, סגרי את Obsidian ואת Claude, והריצי שוב את אותה שורה. כשכתוב All set, פותחים <bdi>Claude</bdi> ⇐ <bdi>Code</bdi> ⇐ <bdi>+ New session</bdi> ⇐ המוח שלי. המוח המלא בפנים, וקבצים שהוספת בינתיים נשארים.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section style="background:var(--paper-2)">
+  <div class="wrap">
+    <h2>אם משהו לא הסתדר</h2>
+    <details><summary>Obsidian נפתח בלי התיקייה שלי</summary><p>ב-Obsidian לוחצים על <b>Open folder as vault</b> ובוחרים את "המוח שלי" שבתיקיית המשתמש שלך.</p></details>
+    <details><summary>המוח ריק</summary><p>כנראה הקובץ "המוח שלי" עוד לא היה בתיקיית ההורדות כשהרצת את השורה. שמרי אותו שם והריצי את השורה שוב. עוד לא קיבלת אותו? הוא בדרך אלייך.</p></details>
+    <details><summary>Claude אומר שנגמרה המכסה</summary><p>המנוי מתחדש כל כמה שעות. חכי, וכתבי לו <b>תמשיך</b>. הוא ממשיך מאיפה שעצר.</p></details>
+    <details><summary>אין לי לשונית Code ב-Claude</summary><p>ודאי שאת מחוברת עם חשבון שיש לו מנוי Pro, ושהאפליקציה מעודכנת.</p></details>
+    <details><summary>משהו אחר</summary><p>צלמי מסך ושלחי לי <a href="https://wa.me/972522596693" target="_blank" rel="noopener">בוואטסאפ</a> או באינסטגרם. נסדר את זה.</p></details>
+    <p style="text-align:center;margin-top:22px">נתקעת? צלמי מסך ושלחי לי.</p>
+    <div style="text-align:center"><a class="btn" href="https://wa.me/972522596693" target="_blank" rel="noopener">כתבי לי בוואטסאפ</a></div>
+    <div class="sig">באהבה, עפרי</div>
+  </div>
+</section>
+
+<footer>עפרי שמואל נגר · ‎@theofrina · חזרה למקור | פתיחת כוחות הנשמה</footer>
+</div>
+<script>
+document.querySelectorAll("[data-copy]").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var t = document.getElementById(b.getAttribute("data-copy")).textContent.trim();
+    var done = function () { var o = b.textContent; b.textContent = "הועתק ✓"; setTimeout(function () { b.textContent = o; }, 1800); };
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(t).then(done, done); return; }
+    var ta = document.createElement("textarea"); ta.value = t; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); } catch (e) {} ta.remove(); done();
+  });
+});
+</script>
+</body>
+</html>
